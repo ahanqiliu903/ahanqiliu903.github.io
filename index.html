@@ -5,7 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Anderson Liu</title>
   <style>
+    @font-face {
+      font-family: "Latin Modern Roman";
+      src: url("https://cdn.jsdelivr.net/npm/@typopro/web-latin-modern@3.7.5/TypoPRO-LatinModernRoman-Regular.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Latin Modern Roman";
+      src: url("https://cdn.jsdelivr.net/npm/@typopro/web-latin-modern@3.7.5/TypoPRO-LatinModernRoman-Bold.woff") format("woff");
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
     body {
+      font-family: "Latin Modern Roman", Georgia, serif;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -26,21 +41,21 @@
   <div class="container">
     <h1 style="text-align: center;">Anderson Liu</h1>
     <p></p>
-    <p>
+    <p style="text-align: center;">
       <a href="https://github.com/ahanqiliu903">GitHub</a>
       |
       <a href="https://www.linkedin.com/in/anderson-h-liu/">LinkedIn</a>
       |
       <a href="mailto:andersonliu@nyu.edu">Email</a>
     </p>
-    <img src="acadia.png" alt="Me at Acadia" width="33%">
-    <p>
+    <img src="acadia.png" alt="Me at Acadia" width="33%" style="display: block; margin: 0 auto;">
+    <p style="text-align: center;">
       At Acadia National Park, ME
     </p>
 
     <h2>About</h2>
     <p>
-      I'm a student at NYU studying Math & CS.
+      Hello, I'm Anderson! I study Math & CS @ NYU. Besides building fun projects, I enjoy trying out NYC's restaurants, watching movies or NBA, and playing Geoguessr.
     </p>
 
     <h2>Experience</h2>
@@ -50,7 +65,7 @@
       <br>
       October '26 - Present
       <br>
-      WIP
+      Building system that uses ML to predict outcomes of academic debates in real-time.
     </p>
 
     <p>
@@ -66,7 +81,7 @@
       <br>
       August '26 - Present
       <br>
-      Managing NYU's thousands of AV equipment. So THIS is where the tuition goes!
+      Managing NYU's thousands of AV equipment.
     </p>
 
     <h2>Projects</h2>
@@ -76,7 +91,7 @@
         Beat the Buffet
       </a>
       <br>
-      For NYU EEG '26 hackathon. Computer vision + all-you-can-eat ingredient pricing based on geographic location. Sashimi arbitrage?
+      For NYU EEG '26 hackathon. YOLO-based CV + geographic location-based price scraping. Sashimi arbitrage.
     </p>
 
     <p>
@@ -84,15 +99,40 @@
         NotEnoughMarkets
       </a>
       <br>
-      Open-sourced tools for Kalshi algotrading. Bonus points to you if you get the name reference (without looking at the repo)!
+      Open-sourced tools for Kalshi algotrading.
     </p>
 
      <h2>Interesting Stuff</h2>
 
     <p>
-      <b>tba
+      <b>Geography Fun Fact</b>
+      <br>
+      <span id="geo-fact">Hokkaido: red-and-white arrow signs mark the edge of snowy roads, so they only show up in Hokkaido and nearby northern areas.</span>
+    </p>
+
+    <p>
+      <b>You Should Watch</b>
+      <br>
+      <img src="vinland.jpeg" alt="Vinland Saga" width="200">
     </p>
 
   </div>
+  <script>
+    const geoFacts = [
+      { text: "Hokkaido: red-and-white arrow signs mark the edge of snowy roads, so they only show up in Hokkaido and nearby northern areas.", img: "hokkaido.webp" },
+      { text: "Colombia: yellow license plates are common, so a yellow plate is a strong clue.", img: "colombia.webp" },
+      { text: "Montenegro: a sky 'rift' in panoramas, caused by stitching artifacts, is a known tell (also seen in Senegal).", img: "montenegro.jpeg" },
+    ];
+    const fact = geoFacts[Math.floor(Math.random() * geoFacts.length)];
+    const factEl = document.getElementById("geo-fact");
+    factEl.textContent = fact.text;
+    const img = document.createElement("img");
+    img.src = fact.img;
+    img.alt = fact.text;
+    img.width = 200;
+    img.style.display = "block";
+    img.style.marginTop = "8px";
+    factEl.parentNode.appendChild(img);
+  </script>
 </body>
 </html>
